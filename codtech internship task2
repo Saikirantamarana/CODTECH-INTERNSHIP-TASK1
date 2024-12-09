@@ -1,0 +1,17 @@
+create database employee
+use employee
+create table employee(
+sno int,
+emp_name varchar(30),
+job_position varchar(30),
+department varchar(30),
+salary bigint);
+insert into employee (sno,emp_name,job_position,department,salary)
+value(1,"kumar","manager","mechanical",70000),
+(2,"sai","accountant","electrical",80000),
+(3,"srinivas","senior engineer","civil",50000),
+(4,"ashok","senior assosicate","medical",40000),
+(5,"anusha","junior engineer","civil",30000),
+(6,"jnanesh","mechanic","mechanical",90000);
+
+select * from employee
