@@ -1,0 +1,38 @@
+# database of student management
+create database student;
+use student
+# create table in database
+create table stud (
+sno int,
+student_name varchar(20),
+course_name  varchar(20),
+grades   varchar(3),
+email varchar(30),
+phone bigint);
+
+# insert data into the table 
+insert into stud(sno,student_name,course_name,grades,email,phone)
+values(1,"T.nani","MECHANICAL","A","nanitamarana@gmail.com",8923872346),
+(2,"T.sai kiran","CSE","A","saitamarana@gmail.com",8923872349),
+(3,"G.murali","ECE","A","gollumurali@gmail.com",9993877346),
+(4,"K.govind","EEE","A","kamireddygovind@gmail.com",7923872376),
+(5,"M.srinivas","CIVIL","A","marrisrinivas@gmail.com",9823872398),
+(6,"J.jnanesh","MECHANICAL","A","jeelugujnanesh@gmail.com",8923877654);
+
+
+use student 
+
+# create the table 2 in the database
+
+create table stud1
+(sno int,
+student_name varchar(20),
+percentage int,
+pass_out_year int);
+insert into stud1(sno,student_name,percentage,pass_out_year)
+values(1,"T.nani",87,2023),
+(2,"K.govind",89,2022),(3,"M.srinivas",78,2020),(4,"J.jnanesh",98,2021),(5,"k.kiran",79,2024);
+
+select distinct stud.sno as sno ,stud.student_name,stud.course_name,stud.email,stud.grades,stud.phone,stud1.percentage,stud1.pass_out_year from stud 
+left join stud1
+on stud.student_name=stud1.student_name;
